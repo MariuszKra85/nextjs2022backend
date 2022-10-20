@@ -5,6 +5,8 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
+import { Video } from './schemas/Video';
+import { HomePage } from './schemas/Homepage';
 import 'dotenv/config';
 import { sendPasswordResetEmail } from './lib/mail';
 
@@ -50,6 +52,8 @@ export default withAuth(
     lists: createSchema({
       // Schema items go in here
       User,
+      Video,
+      HomePage,
     }),
     ui: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
