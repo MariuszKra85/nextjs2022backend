@@ -21,7 +21,7 @@ const { withAuth } = createAuth({
   secretField: 'password',
   initFirstItem: {
     fields: ['name', 'email', 'password'],
-    // TODO: Add in inital roles here
+    // TODO: Add in initial roles here
   },
   passwordResetLink: {
     async sendToken(args) {
@@ -33,7 +33,6 @@ const { withAuth } = createAuth({
 
 export default withAuth(
   config({
-    // @ts-ignore
     server: {
       cors: {
         origin: [process.env.FRONTEND_URL],
@@ -43,6 +42,7 @@ export default withAuth(
     db: {
       adapter: 'mongoose',
       url: databaseURL,
+      // eslint-disable-next-line @typescript-eslint/require-await, no-unused-vars, @typescript-eslint/no-unused-vars
       async onConnect(keystone) {
         console.log('Connected to the database!');
       },
@@ -52,13 +52,10 @@ export default withAuth(
       User,
     }),
     ui: {
-      // Show the UI only for poeple who pass this test
-      isAccessAllowed: ({ session }) =>
-        // console.log(session);
-        !!session?.data,
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      isAccessAllowed: ({ session }) => !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
-      // GraphQL Query
       User: 'id name email role',
     }),
   })
