@@ -6,6 +6,7 @@ import {
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
 import { Video } from './schemas/Video';
+import { Teacher } from './schemas/Teacher';
 import { HomePage } from './schemas/Homepage';
 import 'dotenv/config';
 import { sendPasswordResetEmail } from './lib/mail';
@@ -53,6 +54,7 @@ export default withAuth(
       // Schema items go in here
       User,
       Video,
+      Teacher,
       HomePage,
     }),
     ui: {
