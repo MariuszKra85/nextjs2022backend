@@ -8,6 +8,8 @@ import { User } from './schemas/User';
 import { Video } from './schemas/Video';
 import { Teacher } from './schemas/Teacher';
 import { HomePage } from './schemas/Homepage';
+import { NamedLink } from './schemas/NamedLink';
+import { HomePagePicture } from './schemas/HomePagePicture';
 import 'dotenv/config';
 import { sendPasswordResetEmail } from './lib/mail';
 
@@ -56,6 +58,8 @@ export default withAuth(
       Video,
       Teacher,
       HomePage,
+      HomePagePicture,
+      NamedLink,
     }),
     ui: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
