@@ -8,6 +8,10 @@ export const Teacher = list({
     photo: text(),
     videos: text(),
     role: text(),
+    phone: text(),
+    web: text(),
+    address: text(),
+    email: text(),
   },
   ui: {
     listView: {
