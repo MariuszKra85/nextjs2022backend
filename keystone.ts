@@ -5,11 +5,12 @@ import {
   statelessSessions,
 } from '@keystone-next/keystone/session';
 import { User } from './schemas/User';
-import { Video } from './schemas/Video';
-import { Teacher } from './schemas/Teacher';
-import { HomePage } from './schemas/Homepage';
+import { VideosLib } from './schemas/VideosLib';
+import { HomePageElement } from './schemas/HomepageElement';
 import { NamedLink } from './schemas/NamedLink';
-import { HomePagePicture } from './schemas/HomePagePicture';
+import { PicturesLib } from './schemas/PicturesLib';
+import { TeachersLib } from './schemas/TeachersLib';
+import { SalsaClass } from './schemas/SalsaClass';
 import 'dotenv/config';
 import { sendPasswordResetEmail } from './lib/mail';
 
@@ -55,10 +56,11 @@ export default withAuth(
     lists: createSchema({
       // Schema items go in here
       User,
-      Video,
-      Teacher,
-      HomePage,
-      HomePagePicture,
+      HomePageElement,
+      SalsaClass,
+      VideosLib,
+      PicturesLib,
+      TeachersLib,
       NamedLink,
     }),
     ui: {

@@ -1,12 +1,11 @@
 import { list } from '@keystone-next/keystone/schema';
 import { select, text } from '@keystone-next/fields';
 
-export const Video = list({
+export const VideosLib = list({
   fields: {
     name: text({ isRequired: true }),
     description: text({ isRequired: true, isUnique: true }),
     url: text({ isRequired: true }),
-    image: text({ isRequired: true }),
     level: select({
       dataType: 'enum',
       options: [
