@@ -68,7 +68,7 @@ export default withAuth(
       isAccessAllowed: ({ session }) => !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
-      User: 'id name email role',
+      User: 'id name email',
     }),
   })
 );
