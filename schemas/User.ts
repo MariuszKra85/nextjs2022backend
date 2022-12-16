@@ -7,7 +7,29 @@ export const User = list({
     email: text({ isRequired: true, isUnique: true }),
     password: password(),
     role: text(),
-    level: select({
+    SalsaLevel: select({
+      dataType: 'enum',
+      options: [
+        { label: 'beginner', value: '1' },
+        { label: 'improver', value: '2' },
+        { label: 'advance', value: '3' },
+        { label: '4', value: '4' },
+        { label: '5', value: '5' },
+        { label: '6', value: '6' },
+      ],
+    }),
+    RumbaLevel: select({
+      dataType: 'enum',
+      options: [
+        { label: 'beginner', value: '1' },
+        { label: 'improver', value: '2' },
+        { label: 'advance', value: '3' },
+        { label: '4', value: '4' },
+        { label: '5', value: '5' },
+        { label: '6', value: '6' },
+      ],
+    }),
+    ChachaLevel: select({
       dataType: 'enum',
       options: [
         { label: 'beginner', value: '1' },

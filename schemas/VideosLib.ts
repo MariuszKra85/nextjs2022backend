@@ -31,7 +31,7 @@ export const VideosLib = list({
   },
   ui: {
     listView: {
-      initialColumns: ['name', 'description', 'level'],
+      initialColumns: ['name', 'description', 'type', 'level'],
     },
   },
 });
