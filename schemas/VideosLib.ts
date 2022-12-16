@@ -9,12 +9,12 @@ export const VideosLib = list({
     level: select({
       dataType: 'enum',
       options: [
-        { label: 'level 1', value: 'level 1' },
-        { label: 'level 2', value: 'level 2' },
-        { label: 'level 3', value: 'level 3' },
-        { label: 'level 4', value: 'level 4' },
-        { label: 'level 5', value: 'level 5' },
-        { label: 'level 6', value: 'level 6' },
+        { label: 'level 1', value: '1' },
+        { label: 'level 2', value: '2' },
+        { label: 'level 3', value: '3' },
+        { label: 'level 4', value: '4' },
+        { label: 'level 5', value: '5' },
+        { label: 'level 6', value: '6' },
       ],
     }),
     type: select({
