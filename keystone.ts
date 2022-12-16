@@ -1,18 +1,18 @@
-import { createAuth } from '@keystone-next/auth';
-import { config, createSchema } from '@keystone-next/keystone/schema';
+import { createAuth } from "@keystone-next/auth";
+import { config, createSchema } from "@keystone-next/keystone/schema";
 import {
   withItemData,
   statelessSessions,
-} from '@keystone-next/keystone/session';
-import { User } from './schemas/User';
-import { VideosLib } from './schemas/VideosLib';
-import { HomePageElement } from './schemas/HomepageElement';
-import { NamedLink } from './schemas/NamedLink';
-import { PicturesLib } from './schemas/PicturesLib';
-import { TeachersLib } from './schemas/TeachersLib';
-import { SalsaClass } from './schemas/SalsaClass';
-import 'dotenv/config';
-import { sendPasswordResetEmail } from './lib/mail';
+} from "@keystone-next/keystone/session";
+import { User } from "./schemas/User";
+import { VideosLib } from "./schemas/VideosLib";
+import { HomePageElement } from "./schemas/HomepageElement";
+import { NamedLink } from "./schemas/NamedLink";
+import { PicturesLib } from "./schemas/PicturesLib";
+import { TeachersLib } from "./schemas/TeachersLib";
+import { SalsaClass } from "./schemas/SalsaClass";
+import "dotenv/config";
+import { sendPasswordResetEmail } from "./lib/mail";
 
 const databaseURL = process.env.DATABASE_URL;
 
@@ -22,11 +22,11 @@ const sessionConfig = {
 };
 
 const { withAuth } = createAuth({
-  listKey: 'User',
-  identityField: 'email',
-  secretField: 'password',
+  listKey: "User",
+  identityField: "email",
+  secretField: "password",
   initFirstItem: {
-    fields: ['name', 'email', 'password'],
+    fields: ["name", "email", "password"],
     // TODO: Add in initial roles here
   },
   passwordResetLink: {
@@ -46,11 +46,11 @@ export default withAuth(
       },
     },
     db: {
-      adapter: 'mongoose',
+      adapter: "mongoose",
       url: databaseURL,
       // eslint-disable-next-line @typescript-eslint/require-await, no-unused-vars, @typescript-eslint/no-unused-vars
       async onConnect(keystone) {
-        console.log('Connected to the database!');
+        console.log("Connected to the database!");
       },
     },
     lists: createSchema({
@@ -68,7 +68,7 @@ export default withAuth(
       isAccessAllowed: ({ session }) => !!session?.data,
     },
     session: withItemData(statelessSessions(sessionConfig), {
-      User: 'id name email',
+      User: "id name email level",
     }),
   })
 );
