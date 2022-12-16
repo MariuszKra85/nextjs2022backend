@@ -20,9 +20,9 @@ export const VideosLib = list({
     type: select({
       dataType: 'enum',
       options: [
-        { label: 'level 1', value: 'level 1' },
-        { label: 'level 2', value: 'level 2' },
-        { label: 'level 3', value: 'level 3' },
+        { label: 'salsa', value: 'salsa' },
+        { label: 'rumba', value: 'rumba' },
+        { label: 'cha-cha', value: 'cha-cha' },
         { label: 'level 4', value: 'level 4' },
         { label: 'level 5', value: 'level 5' },
         { label: 'level 6', value: 'level 6' },
